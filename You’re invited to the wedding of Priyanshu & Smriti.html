@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en" class="lock" data-look="royal">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>You’re invited to the wedding of Priyanshu & Smriti</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Jost:wght@300;400;500&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  --plum:#3A0F2E; --plum2:#54183F; --gold:#E2A93B; --rose:#F6E3E0; --ink:#2A1022; --muted:#7B5A70;
+  --bg:#FBF2F0; --text:var(--ink); --card:#fff; --line:#E7CFCB;
+  --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --sans:'Jost','Helvetica Neue',Arial,sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#1E0A18;--text:#F6E3E0;--card:#2C1224;--line:#4A2640;--muted:#C9A5BC;--plum:#2A0A21;color-scheme:dark}
+}
+:root[data-theme="dark"]{--bg:#1E0A18;--text:#F6E3E0;--card:#2C1224;--line:#4A2640;--muted:#C9A5BC;--plum:#2A0A21;color-scheme:dark}
+:root[data-look=emerald]{--plum:#0B3B2E;--plum2:#14594A;--gold:#D9B04A}
+:root[data-look=navy]{--plum:#0E1B3D;--plum2:#1D3470;--gold:#D8B96A}
+:root[data-look=saffron]{--plum:#6E0F12;--plum2:#A31D1D;--gold:#F2B63A}
+@media (prefers-color-scheme:light){
+:root[data-look=emerald]{--bg:#F1F6F1;--line:#CFE0D3;--muted:#4E6B5D;--text:#10241C}
+:root[data-look=navy]{--bg:#F2F4FA;--line:#D3D9EA;--muted:#5A6685;--text:#141B33}
+:root[data-look=saffron]{--bg:#FFF4E0;--line:#EBD3A8;--muted:#8A5A3C;--text:#3A1409}
+}
+@media (prefers-color-scheme:dark){
+:root[data-look=emerald]{--bg:#0A1F18;--card:#112D24;--line:#24493C;--muted:#9FC3B3;--text:#E5F2EA}
+:root[data-look=navy]{--bg:#0B1226;--card:#141E3C;--line:#263459;--muted:#A9B5D6;--text:#E8ECF8}
+:root[data-look=saffron]{--bg:#2A0E0A;--card:#3B1712;--line:#5C2A20;--muted:#D9B59A;--text:#FBE9D0}
+}
+body{padding-bottom:64px}
+.looks{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(12px + env(safe-area-inset-bottom,0px));display:flex;align-items:center;gap:10px;background:var(--card);color:var(--text);border:1px solid var(--line);padding:8px 14px;border-radius:999px;z-index:20;font-size:13px;box-shadow:0 6px 24px rgba(0,0,0,.18)}
+.looks button{width:28px;height:28px;border-radius:50%;border:2px solid var(--gold);cursor:pointer;padding:0}
+.looks button[aria-pressed=true]{outline:3px solid var(--text);outline-offset:2px}
+html.lock,html.lock body{overflow:hidden}
+html.lock .arch,html.lock h1{animation-play-state:paused}
+.cover{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;text-align:center;color:#F6E3E0}
+.door{position:absolute;top:0;bottom:0;width:50.5%;background:radial-gradient(rgba(226,169,59,.2) 1px,transparent 1.6px) 0 0/22px 22px,radial-gradient(120% 80% at 50% 0%,var(--plum2),var(--plum));transition:transform 1.7s cubic-bezier(.7,0,.2,1)}
+.door.l{left:0}.door.r{right:0}
+.door::after{content:"";position:absolute;inset:16px;border:1px solid rgba(226,169,59,.55)}
+.cin{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:16px;padding:24px;transition:opacity .7s,transform 1.4s}
+.dear{font-family:var(--serif);font-size:32px;font-style:italic;color:var(--gold);margin:0}
+.seal{width:150px;height:150px;border-radius:50%;border:0;cursor:pointer;background:radial-gradient(circle at 35% 30%,#F5D27A,var(--gold) 55%,#B87F1C);color:#3A0F2E;font-family:var(--serif);font-size:44px;font-weight:600;line-height:1;animation:pulse 2.6s ease-in-out infinite}
+.seal small{display:block;font-family:var(--sans);font-size:12px;font-weight:500;margin-top:6px}
+.seal:focus-visible{outline:3px solid #fff;outline-offset:6px}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 8px rgba(226,169,59,.25),0 14px 40px rgba(0,0,0,.4)}50%{box-shadow:0 0 0 20px rgba(226,169,59,.07),0 14px 40px rgba(0,0,0,.4)}}
+.cover.open .door.l{transform:translateX(-101%)}
+.cover.open .door.r{transform:translateX(101%)}
+.cover.open .cin{opacity:0;transform:scale(1.5)}
+.cover.gone{display:none}
+.hero::after{content:"";position:absolute;left:-20%;right:-20%;bottom:-30%;height:60%;background:radial-gradient(closest-side,rgba(226,169,59,.3),transparent);pointer-events:none}
+.arch{z-index:2}
+.petal{position:absolute;top:-30px;border-radius:70% 0 70% 0;opacity:0;pointer-events:none;animation:fall linear infinite;z-index:1}
+@keyframes fall{0%{transform:translate3d(0,-5vh,0) rotate(0);opacity:0}10%{opacity:.9}100%{transform:translate3d(var(--dx),108vh,0) rotate(540deg);opacity:.25}}
+h2{text-align:center}
+h2::after{content:"";display:block;width:60px;height:2px;margin:12px auto 0;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.events li{transition:transform .25s}.events li:hover{transform:translateY(-3px)}
+.actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:-28px}
+.actions a.btn{margin:0}
+.btn.alt{background:transparent;color:var(--text);border:1.5px solid var(--plum2)}
+.jr{width:100%;height:auto;margin-top:8px}
+.jr text{fill:var(--text);font-family:var(--serif);font-size:21px;font-weight:600}
+.jr-note{text-align:center;color:var(--muted);margin:4px 0 0}
+.tour{position:fixed;inset:0;z-index:90;background:radial-gradient(120% 90% at 50% 0%,var(--plum2),var(--plum));color:#F6E3E0;display:flex;align-items:center;justify-content:center;padding:24px;text-align:center;transition:opacity .9s}
+.tour.out{opacity:0;pointer-events:none}.tour.gone{display:none}
+.tour-in{max-width:520px;width:100%}
+.slide{display:none}.slide.on{display:block;animation:rise .8s both}
+.slide h2{color:#fff;font-size:34px}
+.slide p{font-family:var(--serif);font-size:23px;line-height:1.5;margin:10px 0}
+.slide .hi{font-family:'Noto Serif Devanagari',var(--serif);color:var(--gold);font-size:19px;line-height:1.7}
+.feat{list-style:none;padding:0;margin:18px auto 0;display:grid;gap:12px;text-align:left;max-width:420px}
+.feat li{display:flex;gap:12px;align-items:flex-start;font-size:17px}
+.feat li::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;background:var(--gold);margin-top:10px}
+.dots{display:flex;gap:8px;justify-content:center;margin:28px 0 18px}
+.dots i{width:8px;height:8px;border-radius:8px;background:rgba(246,227,224,.35);transition:width .3s}
+.dots i.on{background:var(--gold);width:24px}
+.tbtns{display:flex;justify-content:center;gap:12px}
+.tbtns button{font:inherit;padding:12px 26px;border-radius:999px;cursor:pointer;border:1.5px solid var(--gold);background:transparent;color:#F6E3E0}
+.tbtns button.go{background:var(--gold);color:#3A0F2E;font-weight:500}
+.tbtns button:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.box textarea{width:100%;font:inherit;font-size:17px;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--text);margin-bottom:16px;resize:vertical}
+.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.chip{font:inherit;font-size:14px;padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--text);cursor:pointer;text-align:left}
+.chip:hover{border-color:var(--gold)}
+button.btn{font:inherit;font-weight:400;padding:12px 24px;border-radius:999px;cursor:pointer}
+.actions button.btn{margin:0}
+.fab{position:fixed;right:14px;bottom:calc(70px + env(safe-area-inset-bottom,0px));width:50px;height:50px;border-radius:50%;border:0;background:var(--gold);color:#3A0F2E;font-size:24px;cursor:pointer;z-index:20;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+.petal.b{position:fixed;top:-20px;animation-iteration-count:1;z-index:30}
+:root[data-look=royal]{--plum:#2A0612;--plum2:#5A1226;--gold:#D4AF37}
+@media (prefers-color-scheme:light){:root[data-look=royal]{--bg:#FAF3E3;--card:#FFFBF0;--line:#E3CF9C;--muted:#7A5A3A;--text:#2B0A14}}
+@media (prefers-color-scheme:dark){:root[data-look=royal]{--bg:#1A0509;--card:#2A0C14;--line:#5A3A1E;--muted:#D9BE8A;--text:#F7E8C8}}
+[data-look=royal] .hero{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-200 -200 400 400'%3E%3Cg fill='none' stroke='%23D4AF37' stroke-opacity='.3' stroke-width='1.2'%3E%3Ccircle r='192'/%3E%3Ccircle r='170'/%3E%3Ccircle r='100'/%3E%3Cellipse cy='-135' rx='16' ry='36'/%3E%3Cellipse cy='-135' rx='16' ry='36' transform='rotate(30)'/%3E%3Cellipse cy='-135' rx='16' ry='36' transform='rotate(60)'/%3E%3Cellipse cy='-135' rx='16' ry='36' transform='rotate(90)'/%3E%3Cellipse cy='-135' rx='16' ry='36' transform='rotate(120)'/%3E%3Cellipse cy='-135' rx='16' ry='36' transform='rotate(150)'/%3E%3Cellipse cy='-135' rx='16' ry='36' transform='rotate(180)'/%3E%3Cellipse cy='-135' rx='16' ry='36' transform='rotate(210)'/%3E%3Cellipse cy='-135' rx='16' ry='36' transform='rotate(240)'/%3E%3Cellipse cy='-135' rx='16' ry='36' transform='rotate(270)'/%3E%3Cellipse cy='-135' rx='16' ry='36' transform='rotate(300)'/%3E%3Cellipse cy='-135' rx='16' ry='36' transform='rotate(330)'/%3E%3C/g%3E%3C/svg%3E") center 42%/min(700px,160vw) no-repeat,url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 260'%3E%3Cg fill='%23D4AF37' fill-opacity='.22'%3E%3Cpath d='M320 260V150Q320 90 400 66Q480 90 480 150V260Z'/%3E%3Crect x='398' y='28' width='4' height='40'/%3E%3Ccircle cx='400' cy='26' r='7'/%3E%3Cpath d='M190 260V175Q190 128 240 110Q290 128 290 175V260Z'/%3E%3Cpath d='M510 260V175Q510 128 560 110Q610 128 610 175V260Z'/%3E%3Crect x='110' y='120' width='24' height='140'/%3E%3Cpath d='M106 120Q122 82 138 120Z'/%3E%3Crect x='666' y='120' width='24' height='140'/%3E%3Cpath d='M662 120Q678 82 694 120Z'/%3E%3Crect y='238' width='800' height='22'/%3E%3C/g%3E%3Cg fill='%232A0612' fill-opacity='.5'%3E%3Cpath d='M372 260V196Q372 168 400 152Q428 168 428 196V260Z'/%3E%3Cpath d='M222 260V196Q222 176 240 166Q258 176 258 196V260Z'/%3E%3Cpath d='M542 260V196Q542 176 560 166Q578 176 578 196V260Z'/%3E%3C/g%3E%3C/svg%3E") bottom center/max(100%,720px) auto no-repeat,radial-gradient(rgba(212,175,55,.14) 1px,transparent 1.6px) 0 0/26px 26px,radial-gradient(120% 90% at 50% 0%,var(--plum2),var(--plum))}
+.snd{position:fixed;top:calc(10px + env(safe-area-inset-top,0px));right:12px;z-index:120;width:44px;height:44px;border-radius:50%;border:1.5px solid var(--gold);background:rgba(42,6,18,.72);color:#F6E3E0;font-size:20px;cursor:pointer}
+.lyric{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));left:12px;right:68px;z-index:125;margin:0 auto;width:fit-content;max-width:calc(100% - 80px);text-align:center;font-family:'Noto Serif Devanagari',var(--serif);font-size:16px;line-height:1.5;color:#F3D97A;background:rgba(42,6,18,.78);padding:8px 14px;border-radius:14px;opacity:0;transition:opacity .6s;pointer-events:none}
+.lyric.show{opacity:1}.lyric:empty{display:none}
+.snd[hidden]{display:none}.snd:focus-visible{outline:3px solid #fff}
+#owner{display:none!important}
+.vid{position:relative;border-radius:8px;overflow:hidden;border:2px solid var(--gold);box-shadow:0 10px 40px rgba(0,0,0,.25);background:#2A0612;aspect-ratio:4/3}
+.vid svg{display:block;width:100%;height:100%}
+.bubble{position:absolute;top:9%;max-width:64%;background:#FFFBF0;color:#2A0612;border-radius:16px;padding:9px 13px;font-family:'Noto Serif Devanagari',var(--serif);font-size:14px;line-height:1.5;opacity:0;transform:translateY(8px) scale(.96);transition:opacity .8s,transform .8s;pointer-events:none}
+.bubble.show{opacity:1;transform:none}
+.bubble.g{left:4%}.bubble.b{right:4%}
+.bubble::after{content:"";position:absolute;bottom:-7px;width:14px;height:14px;background:#FFFBF0;transform:rotate(45deg)}
+.bubble.g::after{left:36%}.bubble.b::after{right:36%}
+.play{position:absolute;inset:0;width:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;background:rgba(42,6,18,.5);border:0;color:#fff;cursor:pointer;font-family:var(--serif);font-size:24px}
+.play[hidden]{display:none}
+.play .ico{width:76px;height:76px;border-radius:50%;background:linear-gradient(180deg,#F3D97A,#D4AF37 60%,#A8841F);color:#2A0612;display:flex;align-items:center;justify-content:center;font-size:30px;padding-left:4px}
+.play:focus-visible{outline:3px solid var(--gold);outline-offset:-6px}
+.prog{height:4px;background:rgba(212,175,55,.25);border-radius:0 0 4px 4px;margin-top:-2px}
+.prog i{display:block;height:100%;width:0;background:var(--gold);transition:width 1s}
+.ch,.gar{transform-box:fill-box;transform-origin:50% 100%;animation:sway 7s ease-in-out infinite}
+.ch.d2{animation-delay:-2s}.gar{transform-origin:50% 0}
+.hands{animation:bob 3.6s ease-in-out infinite}
+.eye,.mouth,.flame{transform-box:fill-box;transform-origin:50% 50%}
+.eye{animation:blink 4s infinite}
+.flame{transform-origin:50% 100%;animation:flick .6s ease-in-out infinite}
+.vid.tg .gm,.vid.tb .bm{animation:talk .45s ease-in-out infinite}
+@keyframes sway{0%,100%{transform:rotate(-1.2deg)}50%{transform:rotate(1.2deg)}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@keyframes blink{0%,92%,100%{transform:scaleY(1)}96%{transform:scaleY(.1)}}
+@keyframes talk{0%,100%{transform:scaleY(.4)}50%{transform:scaleY(1.5)}}
+@keyframes flick{0%,100%{transform:scale(1,1)}50%{transform:scale(.85,1.2)}}
+@media (prefers-reduced-motion:reduce){.vid *{animation:none!important}}
+.rsvp .box{position:relative;padding-top:68px;overflow:hidden}
+.rsvp .box::before{content:"Your invitation pass";position:absolute;left:0;right:0;top:0;height:46px;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#F3D97A,#D4AF37 60%,#A8841F);color:#2A0612;font-family:var(--serif);font-size:20px;font-weight:600}
+.rsvp .choice{margin-top:6px}
+[data-look=royal] .hero::before{content:"";position:absolute;top:0;left:0;right:0;height:26px;background:radial-gradient(circle at 50% 0,var(--gold) 0 10px,transparent 11px) 0 0/30px 26px repeat-x;opacity:.85;z-index:2}
+[data-look=royal] .arch{border:2px solid var(--gold);box-shadow:0 0 0 7px rgba(212,175,55,.12),0 0 70px rgba(212,175,55,.28)}
+[data-look=royal] h1{background:linear-gradient(180deg,#FFF3C4,#D4AF37 55%,#9C7A1E);-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:.01em}
+[data-look=royal] h1 .amp{color:#F3D97A;-webkit-text-fill-color:#F3D97A}
+[data-look=royal] .date{color:#F3D97A}
+[data-look=royal] h2::after{width:140px;height:14px;background:radial-gradient(circle,var(--gold) 3.5px,transparent 4px) center/14px 14px no-repeat,linear-gradient(90deg,transparent,var(--gold) 38%,var(--gold) 62%,transparent) center/100% 1.5px no-repeat}
+[data-look=royal] .tour h2::after{filter:none}
+[data-look=royal] .events li,[data-look=royal] .box,[data-look=royal] .venue,[data-look=royal] .count div{border:1px solid var(--gold);border-radius:6px;box-shadow:inset 0 0 0 4px var(--card),inset 0 0 0 5px rgba(212,175,55,.5)}
+[data-look=royal] .venue{border-radius:999px 999px 6px 6px;padding:60px 28px 32px;text-align:center}
+[data-look=royal] .events .dt{border-radius:999px 999px 6px 6px}
+[data-look=royal] a.btn,[data-look=royal] button.btn,[data-look=royal] .choice .yes{background:linear-gradient(180deg,#F3D97A,#D4AF37 60%,#A8841F);color:#2A0612;font-weight:500;border:0}
+[data-look=royal] .btn.alt,[data-look=royal] .choice a:not(.yes){background:transparent;color:var(--text);border:1.5px solid var(--gold)}
+[data-look=royal] .jr-note,[data-look=royal] .lead{text-wrap:balance}
+[data-look=royal] footer{border-top:1px solid var(--gold)}
+@media (prefers-reduced-motion:reduce){.seal{animation:none}.door,.cin{transition:opacity .4s}}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:300;line-height:1.65;font-size:17px}
+.hero{min-height:100vh;min-height:100svh;background:radial-gradient(120% 90% at 50% 0%,var(--plum2),var(--plum));color:#F6E3E0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:48px 24px;position:relative;overflow:hidden}
+.arch{width:min(340px,82vw);border:1.5px solid var(--gold);border-radius:999px 999px 0 0;padding:56px 24px 48px;position:relative}
+.arch::before{content:"";position:absolute;inset:8px;border:1px solid rgba(226,169,59,.45);border-radius:999px 999px 0 0;pointer-events:none}
+.small{font-size:15px;letter-spacing:.04em;color:#E9CFC9;margin:0}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(46px,12vw,68px);line-height:1.02;margin:18px 0 14px;color:#fff;animation:rise 1.4s ease both}
+h1 .amp{display:block;font-style:italic;font-weight:400;color:var(--gold);font-size:.55em;line-height:1.2}
+.date{font-family:var(--serif);font-size:24px;font-style:italic;color:var(--gold);margin:0}
+.scroll{margin-top:36px;color:#E9CFC9;font-size:14px;text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:2px}
+.arch{animation:frame 1.6s cubic-bezier(.2,.7,.2,1) both}
+@keyframes frame{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:none}}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+main{max-width:640px;margin:0 auto;padding:72px 24px 40px}
+h2{font-family:var(--serif);font-weight:600;font-size:36px;margin:0 0 10px;line-height:1.15}
+.lead{font-family:var(--serif);font-size:23px;line-height:1.5;text-align:center;margin:0 0 64px}
+.lead b{font-weight:600;color:var(--gold)}
+section{margin-bottom:64px}
+.count{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;text-align:center}
+.count div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 4px}
+.count strong{display:block;font-family:var(--serif);font-size:38px;font-weight:600;line-height:1}
+.count span{font-size:13px;color:var(--muted)}
+.events{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:14px}
+.events li{display:flex;align-items:center;gap:18px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px 18px 14px 14px}
+.events .dt{flex:none;width:76px;height:76px;border-radius:999px 999px 8px 8px;background:linear-gradient(160deg,var(--plum2),var(--plum));color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;border:1.5px solid var(--gold);text-align:center;line-height:1}
+.events .dt b{font-family:var(--serif);font-size:30px;font-weight:600;color:var(--gold)}
+.events .dt span{font-size:12px;margin-top:3px;color:#F6E3E0}
+.events .dt.wide b{font-size:22px}
+.events h3{font-family:var(--serif);font-size:27px;margin:0;font-weight:600;line-height:1.15}
+.events p{margin:3px 0 0;color:var(--muted);font-size:15px}
+.venue{background:var(--card);border:1px solid var(--line);border-radius:20px 20px 4px 4px;padding:28px}
+.venue h3{font-family:var(--serif);font-size:28px;margin:0 0 4px}
+.venue p{margin:0;color:var(--muted)}
+a.btn{display:inline-block;margin-top:18px;background:var(--plum2);color:#fff;text-decoration:none;padding:12px 24px;border-radius:999px;font-weight:400}
+a.btn:focus-visible,.scroll:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.rsvp{text-align:center}
+.rsvp p{margin:0 0 6px}
+.who{font-family:var(--serif);font-size:24px;font-style:italic}
+.box{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;margin:22px 0;text-align:left}
+.box[hidden],#owner[hidden]{display:none}
+.box label{display:block;font-size:14px;color:var(--muted);margin:0 0 6px}
+.box input,.box select{width:100%;font:inherit;font-size:17px;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--text);margin-bottom:16px}
+.choice{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.choice button,.choice a{font:inherit;font-weight:400;padding:14px 10px;border-radius:999px;cursor:pointer;border:1.5px solid var(--plum2);background:transparent;color:var(--text);text-decoration:none;text-align:center;display:block}
+.choice .yes{background:var(--plum2);color:#fff}
+.choice .on{outline:3px solid var(--gold);outline-offset:2px}
+#rsvpMsg{margin:14px 0 0;color:var(--gold);font-weight:400;text-align:center;min-height:1.5em}
+#owner h3{font-family:var(--serif);font-size:26px;margin:0 0 4px}
+#owner ul{list-style:none;margin:10px 0 0;padding:0}
+#owner li{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-top:1px solid var(--line)}
+.tag{font-size:13px;padding:2px 10px;border-radius:999px;border:1px solid var(--gold)}
+footer{text-align:center;padding:40px 24px calc(48px + env(safe-area-inset-bottom,0px));color:var(--muted);font-family:var(--serif);font-size:20px;font-style:italic;border-top:1px solid var(--line);max-width:640px;margin:0 auto}
+@media (prefers-reduced-motion:reduce){h1,.arch{animation:none}html{scroll-behavior:auto}}
+</style>
+<noscript><style>.cover,.tour{display:none}html.lock,html.lock body{overflow:auto}</style></noscript>
+</head>
+<body>
+<button class="snd" id="snd" type="button" hidden aria-label="Turn music off" title="Welcome voice on or off">🔊</button>
+<p class="lyric" id="lyric" lang="hi" aria-live="off"></p>
+<div class="cover" id="cover" role="dialog" aria-label="Wedding invitation">
+  <div class="door l"></div><div class="door r"></div>
+  <div class="cin">
+    <p class="small">Priyanshu Lakra &amp; Smriti Chauhan</p>
+    <p class="dear" id="dear">You are invited</p>
+    <button class="seal" id="seal" type="button" aria-label="Open the invitation">P&amp;S<small>Tap to open</small></button>
+    <p class="small">1 – 5 December 2026</p>
+  </div>
+</div>
+<div class="tour" id="tour" role="dialog" aria-label="Welcome to the invitation">
+  <div class="tour-in">
+    <div class="slide on">
+      <h2>With the blessings of our elders</h2>
+      <p>The Lakra and Chauhan families joyfully invite you to the wedding of <b>Priyanshu</b> and <b>Smriti</b>.</p>
+      <p class="hi" lang="hi">बड़ों के आशीर्वाद से, लकड़ा और चौहान परिवार आपको प्रियांशु और स्मृति के विवाह में सादर आमंत्रित करते हैं।</p>
+    </div>
+    <div class="slide">
+      <h2>Your presence is our gift</h2>
+      <p>Come with family, bring your smiles, and share five days of music, colour and blessings.</p>
+      <p class="hi" lang="hi">आपकी उपस्थिति हमारी खुशियों को पूर्ण करेगी।</p>
+    </div>
+    <div class="slide">
+      <h2>Five days of joy</h2>
+      <ul class="feat"><li>1 December: Haldi</li><li>2 December: Mehndi</li><li>3 December: Food and celebration</li><li>4–5 December: Baraat to Dehradun</li></ul>
+    </div>
+    <div class="slide">
+      <h2>What you can do here</h2>
+      <ul class="feat"><li>Reply Yes or No in one tap on WhatsApp</li><li>Save the dates to your calendar</li><li>Open the venue on the map</li><li>Send your blessings to the couple</li><li>Share the card with your family</li><li>Tap the party button for a shower of petals</li></ul>
+    </div>
+    <div class="dots"><i class="on"></i><i></i><i></i><i></i></div>
+    <div class="tbtns"><button id="tskip" type="button">Skip</button><button id="tnext" class="go" type="button">Next</button></div>
+  </div>
+</div>
+<header class="hero">
+  <div class="arch">
+    <p class="small">Together with their families</p>
+    <h1>Priyanshu <span class="amp">&</span> Smriti</h1>
+    <p class="small">invite you to celebrate their wedding</p>
+    <p class="date" style="margin-top:22px">1 – 5 December 2026</p>
+    <p class="small" style="margin-top:8px">Morkheri, Rohtak &nbsp;to&nbsp; Dehradun</p>
+  </div>
+  <a class="scroll" href="#details">See the details</a>
+</header>
+
+<main id="details">
+  <p class="lead">With joy in our hearts, we invite you to bless the wedding of <b>our beloved brother Priyanshu Lakra</b> and <b>Smriti Chauhan</b>, and share in a day of love, laughter and celebration.</p>
+
+  <section aria-labelledby='vd'>
+    <h2 id='vd'>A message from us</h2>
+    <p class='jr-note' style='margin-bottom:16px'>Priyanshu and Smriti have something to tell you.</p>
+    <div class='vid' id='vid'>
+      <svg viewBox='0 0 400 300' role='img' aria-label='Animated bride and groom welcoming guests with folded hands'>
+        <defs><linearGradient id='sk' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#3A0A1C'/><stop offset='.6' stop-color='#8A2A2A'/><stop offset='1' stop-color='#E0A040'/></linearGradient></defs>
+        <rect width='400' height='300' fill='url(#sk)'/>
+        <circle cx='200' cy='175' r='95' fill='#F3D97A' opacity='.18'/>
+        <g fill='#2A0612' opacity='.55'><path d='M150 262V182Q150 142 200 122Q250 142 250 182V262Z'/><rect x='198' y='96' width='4' height='28'/><rect x='60' y='172' width='20' height='90'/><path d='M56 172Q70 142 84 172Z'/><rect x='320' y='172' width='20' height='90'/><path d='M316 172Q330 142 344 172Z'/></g>
+        <rect y='258' width='400' height='42' fill='#2A0612'/><rect y='258' width='400' height='3' fill='#D4AF37'/>
+        <g class='gar'><path d='M0 14Q100 60 200 14T400 14' fill='none' stroke='#D4AF37' stroke-width='2'/><g fill='#F28C28'><circle cx='50' cy='31' r='7'/><circle cx='150' cy='31' r='7'/><circle cx='250' cy='31' r='7'/><circle cx='350' cy='31' r='7'/></g><g fill='#E8809A'><circle cx='100' cy='37' r='7'/><circle cx='200' cy='14' r='7'/><circle cx='300' cy='37' r='7'/></g></g>
+        <ellipse cx='30' cy='279' rx='15' ry='6' fill='#B87F1C'/><ellipse class='flame' cx='30' cy='269' rx='4' ry='8' fill='#FFD36B'/>
+        <ellipse cx='370' cy='279' rx='15' ry='6' fill='#B87F1C'/><ellipse class='flame' cx='370' cy='269' rx='4' ry='8' fill='#FFD36B'/>
+        <g class='ch'>
+          <path d='M112 262L118 192Q150 180 182 192L188 262Z' fill='#F3D97A'/><path d='M126 190L152 262H140L118 196Z' fill='#8A1030'/>
+          <circle cx='150' cy='206' r='2.5' fill='#B87F1C'/><circle cx='150' cy='222' r='2.5' fill='#B87F1C'/><circle cx='150' cy='238' r='2.5' fill='#B87F1C'/>
+          <circle cx='150' cy='158' r='25' fill='#E8B98E'/>
+          <path d='M123 154Q122 118 150 114Q178 118 177 154Q150 140 123 154Z' fill='#C0392B'/><path d='M128 146Q150 134 172 146' stroke='#F3D97A' stroke-width='3' fill='none'/><circle cx='150' cy='128' r='4' fill='#F3D97A'/>
+          <g class='eye'><circle cx='141' cy='158' r='2.6' fill='#2A0612'/><circle cx='159' cy='158' r='2.6' fill='#2A0612'/></g>
+          <path d='M141 167Q150 162 159 167' stroke='#2A0612' stroke-width='2' fill='none'/><ellipse class='mouth gm' cx='150' cy='173' rx='4' ry='2.4' fill='#7A1F2B'/>
+          <path d='M120 200Q125 226 146 216' stroke='#F3D97A' stroke-width='11' fill='none' stroke-linecap='round'/><path d='M180 200Q175 226 154 216' stroke='#F3D97A' stroke-width='11' fill='none' stroke-linecap='round'/>
+          <g class='hands'><path d='M143 214Q150 198 157 214Q150 223 143 214Z' fill='#E8B98E'/></g>
+        </g>
+        <g class='ch d2'>
+          <path d='M222 262L242 208H282L302 262Z' fill='#B3122B'/><rect x='222' y='252' width='80' height='6' fill='#F3D97A'/><path d='M244 208L248 190Q262 184 276 190L280 208Z' fill='#8A0F24'/>
+          <path d='M232 160Q232 124 262 124Q292 124 292 160L298 214Q262 202 226 214Z' fill='#D42A45' stroke='#F3D97A' stroke-width='2'/>
+          <circle cx='262' cy='162' r='23' fill='#E8B98E'/><path d='M239 160Q240 134 262 134Q284 134 285 160Q262 146 239 160Z' fill='#2A0F14'/>
+          <circle cx='262' cy='148' r='2.8' fill='#F3D97A'/><circle cx='262' cy='154' r='2' fill='#C0102B'/><circle cx='239' cy='172' r='2.5' fill='#F3D97A'/><circle cx='285' cy='172' r='2.5' fill='#F3D97A'/>
+          <g class='eye'><circle cx='253' cy='163' r='2.4' fill='#2A0612'/><circle cx='271' cy='163' r='2.4' fill='#2A0612'/></g>
+          <ellipse class='mouth bm' cx='262' cy='174' rx='4' ry='2.2' fill='#B3122B'/>
+          <path d='M246 200Q250 226 258 218' stroke='#8A0F24' stroke-width='10' fill='none' stroke-linecap='round'/><path d='M278 200Q274 226 266 218' stroke='#8A0F24' stroke-width='10' fill='none' stroke-linecap='round'/>
+          <g class='hands'><path d='M255 216Q262 200 269 216Q262 225 255 216Z' fill='#E8B98E'/></g>
+        </g>
+      </svg>
+      <div class='bubble g' id='bg'></div><div class='bubble b' id='bb'></div>
+      <button class='play' id='vplay' type='button'><span class='ico'>▶</span><span>Watch our invitation</span></button>
+    </div>
+    <div class='prog'><i id='vprog'></i></div>
+    <p class='jr-note' id='vnote' style='margin-top:10px'>Watch and read along. Priyanshu and Smriti’s words appear as subtitles.</p>
+  </section>
+
+  <section aria-labelledby="cd">
+    <h2 id="cd">The celebrations begin in</h2>
+    <div class="count" id="count" aria-live="off">
+      <div><strong id="d">–</strong><span>days</span></div>
+      <div><strong id="h">–</strong><span>hours</span></div>
+      <div><strong id="m">–</strong><span>minutes</span></div>
+      <div><strong id="s">–</strong><span>seconds</span></div>
+    </div>
+  </section>
+
+  <section class="actions" aria-label="Save the date">
+    <a class="btn" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Priyanshu+%26+Smriti+Wedding&amp;dates=20261201/20261206&amp;location=Morkheri%2C+Rohtak%2C+Haryana&amp;details=Haldi+1+Dec%2C+Mehndi+2+Dec%2C+Celebration+3+Dec%2C+Baraat+to+Dehradun+4-5+Dec">Add to calendar</a>
+    <a class="btn alt" target="_blank" rel="noopener" href="https://wa.me/?text=You+are+invited+to+the+wedding+of+Priyanshu+%26+Smriti%2C+1-5+December+2026.+https%3A%2F%2Fclaude.ai%2Fartifact%2FFG1fVDd94gwqgp7nGCS3sZ">Share on WhatsApp</a>
+  </section>
+
+  <section aria-labelledby="ev">
+    <h2 id="ev">Celebrations</h2>
+    <ul class="events">
+      <li><div class="dt"><b>1</b><span>Dec</span></div><div><h3>Haldi</h3><p>Morkheri, Rohtak</p></div></li>
+      <li><div class="dt"><b>2</b><span>Dec</span></div><div><h3>Mehndi</h3><p>Morkheri, Rohtak</p></div></li>
+      <li><div class="dt"><b>3</b><span>Dec</span></div><div><h3>Food &amp; Celebration</h3><p>Morkheri, Rohtak</p></div></li>
+      <li><div class="dt wide"><b>4–5</b><span>Dec</span></div><div><h3>Baraat to Dehradun</h3><p>The wedding procession departs from Rohtak</p></div></li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="jy">
+    <h2 id="jy">The journey</h2>
+    <svg class="jr" viewBox="0 0 600 160" role="img" aria-label="Route from Rohtak to Dehradun">
+      <path d="M60 105 C 200 15, 380 145, 540 45" style="fill:none;stroke:var(--gold);stroke-width:2.5;stroke-dasharray:3 9;stroke-linecap:round"/>
+      <circle cx="60" cy="105" r="10" style="fill:var(--plum2)"/><circle cx="540" cy="45" r="10" style="fill:var(--plum2)"/>
+      <circle r="7" style="fill:var(--gold)"><animateMotion dur="7s" repeatCount="indefinite" path="M60 105 C 200 15, 380 145, 540 45"/></circle>
+      <text x="60" y="142" text-anchor="middle">Rohtak</text><text x="540" y="28" text-anchor="middle">Dehradun</text>
+    </svg>
+    <p class="jr-note">Haldi, Mehndi and celebrations in Rohtak, then the baraat sets off for Dehradun on 4–5 December.</p>
+  </section>
+
+  <section aria-labelledby="vn">
+    <h2 id="vn">Where to join us</h2>
+    <div class="venue">
+      <h3>Morkheri</h3>
+      <p>Rohtak, Haryana. Haldi, Mehndi and the 3 December celebration are held here, before the baraat leaves for Dehradun.</p>
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Morkheri+Rohtak+Haryana" target="_blank" rel="noopener">Open in Maps</a>
+    </div>
+  </section>
+
+  <section id="asst" aria-labelledby="as" hidden>
+    <h2 id="as">Ask the wedding assistant</h2>
+    <p class="jr-note">Ask about dates, places or plans. An AI answers using the details on this card.</p>
+    <div class="box" style="margin-top:16px">
+      <label for="aq">Your question</label>
+      <input id="aq" maxlength="200" placeholder="When is the Haldi?">
+      <button type="button" class="btn" id="ask">Ask</button>
+      <p id="aa" role="status" style="margin:16px 0 0;white-space:pre-wrap"></p>
+    </div>
+  </section>
+
+  <section aria-labelledby="ws">
+    <h2 id="ws">Send your blessings</h2>
+    <p class="jr-note" style="margin-bottom:16px">Pick a message or write your own. It opens in WhatsApp.</p>
+    <div class="chips">
+      <button type="button" class="chip">Congratulations Priyanshu & Smriti! Wishing you a lifetime of love and happiness.</button>
+      <button type="button" class="chip">May your journey together be filled with joy, laughter and endless blessings.</button>
+      <button type="button" class="chip" lang="hi">बहुत-बहुत बधाई! आपका वैवाहिक जीवन सुख और प्रेम से भरा रहे।</button>
+      <button type="button" class="chip">Can’t wait to dance at your wedding!</button>
+    </div>
+    <div class="box" style="margin-top:18px">
+      <label for="wtext">Your message</label>
+      <textarea id="wtext" rows="3" maxlength="300" placeholder="Write your wishes here"></textarea>
+      <select id="wstyle" hidden aria-label="Message style"><option>Heartfelt</option><option>Funny</option><option>Poetic</option><option>Hindi</option><option>Hinglish</option></select>
+      <div class="actions" style="margin-top:0;justify-content:flex-start">
+        <a class="btn" id="wsend" target="_blank" rel="noopener" href="https://wa.me/919350360894">Send on WhatsApp</a>
+        <button type="button" class="btn alt" id="tag">Copy #PriyanshuWedsSmriti</button>
+        <button type="button" class="btn alt" id="aiw" hidden>✨ Write it with AI</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="rsvp" aria-labelledby="rs">
+    <h2 id="rs">Reserve your seat</h2>
+    <p>We would love to celebrate with you. Let us know by 25 November and we will keep your seat ready.</p>
+    <div class="box" id="rsvpBox">
+      <label for="gname">Your name</label>
+      <input id="gname" maxlength="60" autocomplete="name" placeholder="Full name">
+      <label for="gcount">How many will join us?</label>
+      <select id="gcount"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
+      <div class="choice"><a class="yes" id="yes" href="https://wa.me/919350360894" target="_blank" rel="noopener">Count me in</a><a id="no" href="https://wa.me/919350360894" target="_blank" rel="noopener">I will bless from afar</a></div>
+      <p id="rsvpMsg" role="status"></p>
+    </div>
+    <div class="box" id="owner" hidden>
+      <h3 id="ownerTitle">Guest replies</h3>
+      <p id="ownerSum" style="margin:0;color:var(--muted)">No replies yet.</p>
+      <ul id="ownerList"></ul>
+    </div>
+    <p class="who">Call or message: +91 93503 60894</p>
+  </section>
+</main>
+
+<footer>With love, the Lakra and Chauhan families</footer>
+<button type="button" class="fab" id="party" aria-label="Shower of petals" title="Celebrate">🎉</button>
+<nav class="looks" id="looks" aria-label="Card style"><span>Try a style</span>
+  <button type="button" data-look="royal" aria-pressed="true" aria-label="Royal maroon and gold" title="Royal maroon and gold" style="background:linear-gradient(135deg,#5A1226,#D4AF37)"></button>
+  <button type="button" data-look="plum" aria-pressed="false" aria-label="Plum and gold" title="Plum and gold" style="background:#54183F"></button>
+  <button type="button" data-look="emerald" aria-pressed="false" aria-label="Emerald and gold" title="Emerald and gold" style="background:#14594A"></button>
+  <button type="button" data-look="navy" aria-pressed="false" aria-label="Royal navy" title="Royal navy" style="background:#1D3470"></button>
+  <button type="button" data-look="saffron" aria-pressed="false" aria-label="Saffron and red" title="Saffron and red" style="background:#A31D1D"></button>
+</nav>
+
+<script>
+(function(){
+  var target=new Date('2026-12-01T10:00:00+05:30').getTime();
+  var ids=['d','h','m','s'].map(function(i){return document.getElementById(i)});
+  function pad(n){return n<10?'0'+n:''+n}
+  function tick(){
+    var t=Math.max(0,target-Date.now());
+    var v=[Math.floor(t/864e5),Math.floor(t%864e5/36e5),Math.floor(t%36e5/6e4),Math.floor(t%6e4/1e3)];
+    ids[0].textContent=v[0];ids[1].textContent=pad(v[1]);ids[2].textContent=pad(v[2]);ids[3].textContent=pad(v[3]);
+  }
+  tick();setInterval(tick,1000);
+})();
+(function(){
+  var c=document.getElementById('cover'),s=document.getElementById('seal'),h=document.documentElement;
+  var raw='';try{raw=decodeURIComponent((location.hash||'').slice(1)).replace(/_/g,' ').trim()}catch(e){}
+  if(raw&&raw.length<40){document.getElementById('dear').textContent='Dear '+raw+',';var gn=document.getElementById('gname');if(gn)gn.value=raw}
+  function petals(){
+    if(window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+    var hero=document.querySelector('.hero'),cols=['#E2A93B','#F28C28','#E8809A','#F6E3E0'];
+    for(var i=0;i<26;i++){var p=document.createElement('i');p.className='petal';
+      p.style.left=Math.random()*100+'%';p.style.background=cols[i%4];
+      p.style.setProperty('--dx',(Math.random()*160-80)+'px');
+      p.style.animationDuration=(7+Math.random()*7)+'s';p.style.animationDelay=(Math.random()*5)+'s';
+      p.style.width=(8+Math.random()*9)+'px';p.style.height=(10+Math.random()*10)+'px';hero.appendChild(p)}
+  }
+  var tour=document.getElementById('tour'),sl=tour.querySelectorAll('.slide'),dots=tour.querySelectorAll('.dots i'),nx=document.getElementById('tnext'),sk=document.getElementById('tskip'),k=0;
+  function show(i){k=i;sl.forEach(function(x,j){x.classList.toggle('on',j===i)});dots.forEach(function(x,j){x.classList.toggle('on',j===i)});nx.textContent=i===sl.length-1?'Open the card':'Next';sk.style.visibility=i===sl.length-1?'hidden':'visible'}
+  function finish(){tour.classList.add('out');h.classList.remove('lock');petals();setTimeout(function(){tour.classList.add('gone')},1000)}
+  nx.addEventListener('click',function(){if(k<sl.length-1)show(k+1);else finish()});
+  sk.addEventListener('click',finish);
+  s.addEventListener('click',function(){
+    c.classList.add('open');
+    setTimeout(function(){c.classList.add('gone');try{nx.focus({preventScroll:true})}catch(e){}},1900);
+  });
+  try{s.focus({preventScroll:true})}catch(e){}
+})();
+(function(){
+  var seal=document.getElementById('seal'),snd=document.getElementById('snd'),AC,master,fade,bus,on=true,ended=false;
+  var raw='';try{raw=decodeURIComponent((location.hash||'').slice(1)).replace(/_/g,' ').trim()}catch(e){}
+  if(raw.length>40)raw='';
+  var SA=293.66,R=[15/16,9/8,5/4,9/8,5/4,45/32,5/4,9/8,1,9/8,5/4,3/2,45/32,5/4,9/8,1],B=.5;
+  function env(g,t,a,d,v){g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(v,t+a);g.gain.exponentialRampToValueAtTime(.0001,t+d)}
+  function pluck(f,t,d,v){var o=AC.createOscillator(),g=AC.createGain(),l=AC.createBiquadFilter();o.type='sawtooth';o.frequency.value=f;l.type='lowpass';l.frequency.setValueAtTime(3200,t);l.frequency.exponentialRampToValueAtTime(500,t+d);env(g,t,.01,d,v);o.connect(l);l.connect(g);g.connect(bus);o.start(t);o.stop(t+d+.05)}
+  function bell(f,t,v){[1,2.76,5.4].forEach(function(m,i){var o=AC.createOscillator(),g=AC.createGain();o.type='sine';o.frequency.value=f*m;env(g,t,.005,3.2/(i+1),v/(i+1));o.connect(g);g.connect(bus);o.start(t);o.stop(t+3.3)})}
+  function dhol(t,v){var o=AC.createOscillator(),g=AC.createGain();o.type='sine';o.frequency.setValueAtTime(150,t);o.frequency.exponentialRampToValueAtTime(55,t+.18);env(g,t,.005,.3,v);o.connect(g);g.connect(bus);o.start(t);o.stop(t+.35)}
+  function start(){return;
+    var A=window.AudioContext||window.webkitAudioContext;if(!A)return;
+    try{AC=new A()}catch(e){return}
+    ended=false;
+    fade=AC.createGain();fade.connect(AC.destination);
+    master=AC.createGain();master.gain.value=on?.55:0;master.connect(fade);
+    bus=AC.createGain();bus.gain.value=.9;bus.connect(master);
+    var d=AC.createDelay(1);d.delayTime.value=.3;var fb=AC.createGain();fb.gain.value=.38;d.connect(fb);fb.connect(d);bus.connect(d);d.connect(master);
+    var t=AC.currentTime+.1;
+    [SA/2,SA*.75].forEach(function(f){var o=AC.createOscillator(),g=AC.createGain();o.type='triangle';o.frequency.value=f;g.gain.value=.05;o.connect(g);g.connect(bus);o.start(t);o.stop(t+53)});
+    bell(SA*2,t,.18);bell(SA*3,t+.4,.14);bell(SA*4,t+.8,.12);
+    for(var n=0;n<6;n++){for(var i=0;i<16;i++){var tt=t+1.4+n*8+i*B;pluck(SA*R[i],tt,i%4===3?1.1:.7,.16);if(i%4===0)dhol(tt,.24);if(i%4===2)dhol(tt,.1)}}
+    fade.gain.setValueAtTime(1,t+48);fade.gain.linearRampToValueAtTime(0,t+53);
+    showLyrics();setTimeout(function(){ended=true},53500);
+  }
+  function showLyrics(){
+    var el=document.getElementById('lyric');if(!el)return;
+    var Ls=['आज सजी है शहनाई, बजी है खुशियों की धुन','प्रियांशु संग स्मृति आई, मिल गए दो मन के सुर','हल्दी महके, मेहँदी रचे, आँगन में उजियारा','रोहतक से देहरादून तक, चला बारात का कारवाँ','आइए, आशीष दीजिए, खिले यह जोड़ी प्यारी','आपके आने से पूरी हो, हर रस्म हमारी','जुग-जुग जिए यह जोड़ी, सदा रहे मुस्कान','स्वागत है, स्वागत है, पधारिए मेहमान'];
+    Ls.forEach(function(s,i){setTimeout(function(){el.textContent=on?s:'';el.classList.add('show')},1400+i*6000)});
+    setTimeout(function(){el.classList.remove('show')},1400+Ls.length*6000);
+  }
+  function showSub(s){var el=document.getElementById('lyric');if(el){el.textContent=on?s:'';el.classList.add('show')}}
+  function hideSub(){var el=document.getElementById('lyric');if(el)el.classList.remove('show')}
+  function duck(b){if(master)master.gain.setTargetAtTime(on?(b?.2:.55):0,AC.currentTime,.1)}
+  function speak(){
+    if(!('speechSynthesis' in window))return;
+    var S=window.speechSynthesis,hi=true,nm=raw?' '+raw:'';
+    S.cancel();
+    var L=hi?[['hi-IN','नमस्ते'+nm+'! मैं प्रियांशु हूँ।',.8],['hi-IN','और मैं स्मृति हूँ। आप सबका हमारे विवाह में हार्दिक स्वागत है।',1.35],['hi-IN','आपके आशीर्वाद और उपस्थिति से हमारी खुशियाँ पूरी होंगी।',.8]]:[['en-IN','Namaste'+nm+'! I am Priyanshu.',.8],['en-IN','And I am Smriti. We are so happy that you are here.',1.35],['en-IN','Please join us and bless us with your presence. Welcome to our wedding celebration.',.8]];
+    L=L.concat([['hi-IN','बड़ों के आशीर्वाद से, लकड़ा और चौहान परिवार आपको प्रियांशु और स्मृति के विवाह समारोह में सादर आमंत्रित करते हैं।',.8],['hi-IN','एक दिसंबर को हल्दी, दो दिसंबर को मेहँदी, तीन दिसंबर को भोज और उत्सव, और चार-पाँच दिसंबर को बारात रोहतक से देहरादून जाएगी।',1.35],['hi-IN','आप सपरिवार पधारिए, और हमें अपना आशीर्वाद दीजिए। आपका इंतज़ार रहेगा।',.8]]);
+    duck(true);
+    L.forEach(function(l,i){var u=new SpeechSynthesisUtterance(l[1]);u.lang=l[0];var hv=S.getVoices().filter(function(v){return /^hi/i.test(v.lang)})[0];if(hv)u.voice=hv;u.pitch=l[2];u.rate=.78;u.onstart=function(){showSub(l[1])};u.onend=u.onerror=function(){if(i===L.length-1){duck(false);hideSub()}};S.speak(u)});
+  }
+  seal.addEventListener('click',function(){try{start();speak();snd.hidden=false}catch(e){}});
+  snd.addEventListener('click',function(){
+    on=!on;snd.textContent=on?'🔊':'🔇';snd.setAttribute('aria-label',on?'Turn music off':'Turn music on');
+    if(!on&&'speechSynthesis' in window)speechSynthesis.cancel();
+    if(on&&ended){try{start()}catch(e){}}else if(master)master.gain.setTargetAtTime(on?.55:0,AC.currentTime,.05);
+  });
+})();
+(async function(){
+  try{
+    if(!window.claude||!claude.use)return;
+    var sample=await claude.use('sample');if(!sample)return;
+    var $=function(i){return document.getElementById(i)};
+    $('asst').hidden=false;$('aiw').hidden=false;$('wstyle').hidden=false;
+    var FACTS='Wedding of Priyanshu Lakra and Smriti Chauhan. Haldi on 1 Dec 2026, Mehndi on 2 Dec, food and celebration on 3 Dec, all at Morkheri, Rohtak, Haryana. The baraat travels to Dehradun on 4 and 5 Dec 2026. Please reply by 25 November on WhatsApp +91 93503 60894. Exact timings, the Dehradun venue and the dress code are not decided on this card.';
+    $('aiw').addEventListener('click',async function(){
+      var b=this,old=b.textContent,n=$('gname')?$('gname').value.trim():'',idea=$('wtext').value.trim(),st=$('wstyle').value;
+      b.disabled=true;b.textContent='Writing...';
+      try{
+        var r=await sample('Write one warm wedding blessing of 25 to 45 words for the couple Priyanshu and Smriti. Style: '+st+(st==='Hindi'?' (write in Devanagari Hindi)':st==='Hinglish'?' (Hindi written in English letters)':' (English)')+'. '+(n?'It is from '+n+'. ':'')+(idea?'Use this idea from the guest: '+idea+'. ':'')+'Output only the message, with no quotes and no hashtags.');
+        $('wtext').value=(r.text||'').trim();$('wtext').dispatchEvent(new Event('input'));
+      }catch(e){b.textContent='Please try again';setTimeout(function(){b.textContent=old},2000);b.disabled=false;return}
+      b.disabled=false;b.textContent=old;
+    });
+    $('ask').addEventListener('click',async function(){
+      var q=$('aq').value.trim(),a=$('aa');if(!q)return;
+      a.textContent='Thinking...';
+      try{
+        var r=await sample('You are the friendly assistant on a wedding invitation. Answer only from these facts: '+FACTS+' If the answer is not in the facts, say it is not decided yet and suggest asking the family on WhatsApp. Reply in the same language as the question, in at most 60 words. Question: '+q,{cache:false});
+        a.textContent=(r.text||'').trim();
+      }catch(e){a.textContent='The assistant is not available right now. Please message the family on WhatsApp.'}
+    });
+  }catch(e){}
+})();
+(function(){
+  var $=function(i){return document.getElementById(i)},vid=$('vid');if(!vid)return;
+  var L=[['g','नमस्ते! मैं प्रियांशु।',.8],['b','और मैं स्मृति। हम दोनों आपको अपने विवाह उत्सव में बुलाते हैं।',1.35],['g','एक से तीन दिसंबर तक हल्दी, मेहँदी और भोज रोहतक में होंगे।',.8],['b','फिर चार और पाँच दिसंबर को बारात देहरादून जाएगी।',1.35],['g','आपके बिना हमारी खुशियाँ अधूरी हैं।',.8],['b','सपरिवार ज़रूर आइए। हम आपका इंतज़ार करेंगे!',1.35]];
+  var run=0;try{if(window.speechSynthesis)speechSynthesis.getVoices()}catch(e){}
+  function clr(){$('bg').classList.remove('show');$('bb').classList.remove('show');vid.classList.remove('tg','tb')}
+  function step(i,id){
+    if(id!==run)return;
+    if(i>=L.length){clr();$('vprog').style.width='100%';var pl=$('vplay');pl.hidden=false;pl.lastChild.textContent='Watch again';var p=$('party');if(p)p.click();return}
+    var l=L[i],g=l[0]==='g';clr();
+    var bub=$(g?'bg':'bb');bub.textContent=l[1];bub.classList.add('show');vid.classList.add(g?'tg':'tb');
+    $('vprog').style.width=Math.round(i/L.length*100)+'%';
+    var done=false,need=2;function next(){if(done)return;done=true;setTimeout(function(){step(i+1,id)},1000)}function ok(){if(--need<=0)next()}
+    var S=window.speechSynthesis;
+    if(false&&S&&window.SpeechSynthesisUtterance){
+      var u=new SpeechSynthesisUtterance(l[1]);u.lang='hi-IN';u.pitch=l[2];u.rate=.72;
+      var hv=S.getVoices().filter(function(v){return /^hi/i.test(v.lang)})[0];if(hv)u.voice=hv;
+      var fin=false;u.onend=u.onerror=function(){if(!fin){fin=true;ok()}};S.speak(u);
+      setTimeout(ok,Math.max(3800,l[1].length*110));setTimeout(next,Math.max(14000,l[1].length*450));
+    }else{need=1;setTimeout(ok,Math.max(5500,l[1].length*200))}
+  }
+  $('vplay').addEventListener('click',function(){
+    run++;this.hidden=true;if(false){$('vnote').textContent='This device cannot play voices, so the words appear in the speech bubbles.'}
+    try{if(window.speechSynthesis)speechSynthesis.cancel()}catch(e){}
+    step(0,run);
+  });
+})();
+(function(){
+  var $=function(i){return document.getElementById(i)},t=$('wtext');
+  function upd(){
+    var n=$('gname')?$('gname').value.trim():'',txt=t.value.trim()||'Congratulations Priyanshu & Smriti!';
+    if(n)txt+=' - '+n;
+    $('wsend').href='https://wa.me/919350360894?text='+encodeURIComponent(txt);
+  }
+  document.querySelectorAll('.chip').forEach(function(b){b.addEventListener('click',function(){t.value=b.textContent;upd()})});
+  t.addEventListener('input',upd);if($('gname'))$('gname').addEventListener('input',upd);upd();
+  $('tag').addEventListener('click',async function(){
+    var b=this;try{await navigator.clipboard.writeText('#PriyanshuWedsSmriti');b.textContent='Copied!'}catch(e){b.textContent='#PriyanshuWedsSmriti'}
+  });
+  $('party').addEventListener('click',function(){
+    if(window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+    var cols=['#E2A93B','#F28C28','#E8809A','#F6E3E0'],made=[];
+    for(var i=0;i<46;i++){var p=document.createElement('i');p.className='petal b';
+      p.style.left=Math.random()*100+'%';p.style.background=cols[i%4];
+      p.style.setProperty('--dx',(Math.random()*200-100)+'px');
+      p.style.animationDuration=(3.5+Math.random()*3)+'s';p.style.animationDelay=(Math.random()*.9)+'s';
+      p.style.width=(9+Math.random()*10)+'px';p.style.height=(12+Math.random()*10)+'px';
+      document.body.appendChild(p);made.push(p)}
+    setTimeout(function(){made.forEach(function(p){p.remove()})},8000);
+  });
+})();
+(function(){
+  var bs=document.querySelectorAll('#looks button');
+  bs.forEach(function(b){b.addEventListener('click',function(){
+    document.documentElement.setAttribute('data-look',b.dataset.look);
+    bs.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+  })});
+})();
+(function(){
+  var PH='919350360894',$=function(i){return document.getElementById(i)};
+  function link(a){
+    var n=$('gname').value.trim()||'A guest',c=$('gcount').value;
+    var t=a?'Hello! This is '+n+'. Yes, we will join Priyanshu & Smriti’s wedding celebrations. Guests coming: '+c+'.':'Hello! This is '+n+'. Sorry, we are unable to attend Priyanshu & Smriti’s wedding.';
+    return 'https://wa.me/'+PH+'?text='+encodeURIComponent(t);
+  }
+  function upd(){$('yes').href=link(true);$('no').href=link(false)}
+  $('gname').addEventListener('input',upd);$('gcount').addEventListener('change',upd);upd();
+  ['yes','no'].forEach(function(id){
+    $(id).addEventListener('click',function(e){
+      if(!$('gname').value.trim()){e.preventDefault();$('rsvpMsg').textContent='Please enter your name first.';$('gname').focus();return}
+      upd();$('rsvpMsg').textContent='Opening WhatsApp. Please press Send to confirm your reply.';
+    });
+  });
+})();
+(async function(){
+  try{
+    if(!window.claude||!claude.use)return;
+    var db=await claude.use('db'),user=await claude.use('user');
+    if(!db||!user)return;
+    var $=function(i){return document.getElementById(i)};
+    var uid=await user.id(),owner=await user.isOwner();
+    if(owner){
+      $('owner').hidden=false;
+      db.collection('rsvps').onSnapshot(function(snap){
+        var yes=0,no=0,ppl=0,list=$('ownerList');list.textContent='';
+        snap.docs.forEach(function(d){
+          var r=d.data()||{},li=document.createElement('li'),n=document.createElement('span'),t=document.createElement('span');
+          n.textContent=(r.name||'Guest')+(r.attending?' ('+(r.count||1)+')':'');
+          t.className='tag';t.textContent=r.attending?'Coming':'Not coming';
+          if(r.attending){yes++;ppl+=Number(r.count||1)}else no++;
+          li.appendChild(n);li.appendChild(t);list.appendChild(li);
+        });
+        $('ownerTitle').textContent='Guest replies: '+snap.size;
+        $('ownerSum').textContent=snap.size?(yes+' coming ('+ppl+' people), '+no+' not coming'):'No replies yet.';
+      },function(){});
+    }
+    if(!uid)return;
+    $('rsvpBox').hidden=false;
+    var ref=db.doc('rsvps/'+uid),msg=$('rsvpMsg');
+    function mark(a){$('yes').classList.toggle('on',a===true);$('no').classList.toggle('on',a===false)}
+    try{var s=await ref.get();if(s.exists){var r=s.data();$('gname').value=r.name||'';$('gcount').value=String(r.count||1);mark(!!r.attending);msg.textContent='Your reply is saved. You can change it anytime.'}}catch(e){}
+    async function send(a){
+      var name=$('gname').value.trim();
+      if(!name){msg.textContent='Please enter your name first.';$('gname').focus();return}
+      try{
+        await ref.set({name:name,attending:a,count:a?Number($('gcount').value):0,at:new Date().toISOString()});
+        mark(a);msg.textContent=a?'Thank you, we can’t wait to celebrate with you!':'Thank you for letting us know. You will be missed.';
+      }catch(e){msg.textContent='Could not save your reply. Please call us instead.'}
+    }
+    $('yes').onclick=function(){send(true)};$('no').onclick=function(){send(false)};
+  }catch(e){}
+})();
+</script>
+</body>
+</html>
